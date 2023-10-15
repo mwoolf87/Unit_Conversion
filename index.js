@@ -1,7 +1,7 @@
 /*
-1 meter = 3.281 feet
-1 liter = 0.264 gallon
-1 kilogram = 2.204 pound
+1 meter = 3.28084 feet
+1 liter = 0.264172 gallon
+1 kilogram = 2.20462 pound
 */
 const inputEl = document.getElementById("inputEl");
 const convertBtn = document.getElementById("convertBtn");
@@ -10,28 +10,28 @@ const convertLength = document.getElementById("length-conversion");
 const convertVolume = document.getElementById("volume-conversion");
 const convertMass = document.getElementById("mass-conversion");
 
-const meterToFeet = 3.281;
-const literToGallon = 0.264;
-const kilogramToPound = 2.204;
+const meterToFeet = 3.28084;
+const literToGallon = 0.264172;
+const kilogramToPound = 2.20462;
 
 function calcVals() {
   baseVal = inputEl.value;
 
   convertLength.textContent = `${baseVal} meters = ${(
     baseVal * meterToFeet
-  ).toFixed(3)} | ${baseVal} feet = ${(baseVal / meterToFeet).toFixed(
+  ).toFixed(3)} feet | ${baseVal} feet = ${(baseVal / meterToFeet).toFixed(
     3
   )} meters`;
-  convertVolume.textContent = `${baseVal} meters = ${(
+  convertVolume.textContent = `${baseVal} liters = ${(
     baseVal * literToGallon
-  ).toFixed(3)} | ${baseVal} feet = ${(baseVal / literToGallon).toFixed(
-    3
-  )} meters`;
-  convertMass.textContent = `${baseVal} meters = ${(
+  ).toFixed(3)} gallons | ${baseVal} gallons = ${(
+    baseVal / literToGallon
+  ).toFixed(3)} liters`;
+  convertMass.textContent = `${baseVal} kilos = ${(
     baseVal * kilogramToPound
-  ).toFixed(3)} | ${baseVal} feet = ${(baseVal / kilogramToPound).toFixed(
-    3
-  )} meters`;
+  ).toFixed(3)} pounds | ${baseVal} pounds = ${(
+    baseVal / kilogramToPound
+  ).toFixed(3)} kilos`;
 }
 
 convertBtn.addEventListener("click", function () {
